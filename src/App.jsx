@@ -7,6 +7,13 @@ import { Dashboard } from "./components/Dashboard";
 function App() {
   const [count, setCount] = useState(0);
 
+  const router = [
+    {
+      route: "/",
+      component: Dashboard,
+    },
+  ];
+
   return (
     <BrowserRouter>
       <Routes>
