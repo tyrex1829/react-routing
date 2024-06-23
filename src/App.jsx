@@ -1,8 +1,8 @@
-import { useState } from "react";
-import "./App.css";
-import { Landing } from "./components/Landing";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
-import { Dashboard } from "./components/Dashboard";
+import "./App.css";
+const Landing = React.lazy(() => import("./components/Landing"));
+const Dashboard = React.lazy(() => import("./components/Dashboard"));
 
 function App() {
   const [count, setCount] = useState(0);
