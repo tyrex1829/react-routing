@@ -69,25 +69,38 @@
 
 // code for prop-drilling.
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./App.css";
+import { CountContext } from "./Context";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div>
-      <Count count={count} />
-      <Buttons count={count} setCount={setCount} />
+      <CountContext.Provider value={count}>
+        <Count count={count} setCount={setCount} />
+      </CountContext.Provider>
     </div>
   );
 }
 
-function Count({ count }) {
+function Count({ setCount }) {
+  return (
+    <div>
+      <CountRenderer />
+      <Buttons setCount={setCount} />
+    </div>
+  );
+}
+
+function CountRenderer() {
+  const count = useContext(CountContext);
   return <div>{count}</div>;
 }
 
-function Buttons({ count, setCount }) {
+function Buttons({ setCount }) {
+  const count = useContext(CountContext);
   return (
     <div>
       <button
