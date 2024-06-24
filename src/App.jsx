@@ -67,4 +67,24 @@
 //   );
 // }
 
+// code for prop-drilling.
+
+import { useState } from "react";
+import "./App.css";
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <Count />
+      <Buttons />
+    </div>
+  );
+}
+
+function Count() {}
+
+function Buttons() {}
+
 export default App;
