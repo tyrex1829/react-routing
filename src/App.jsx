@@ -69,58 +69,60 @@
 
 // code for prop-drilling & context api
 
-import { useContext, useState } from "react";
-import "./App.css";
-import { CountContext } from "./Context";
+// import { useContext, useState } from "react";
+// import "./App.css";
+// import { CountContext } from "./Context";
 
-function App() {
-  const [count, setCount] = useState(0);
+// function App() {
+//   const [count, setCount] = useState(0);
 
-  return (
-    <div>
-      <CountContext.Provider value={{ count, setCount }}>
-        <Count />
-      </CountContext.Provider>
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <CountContext.Provider value={{ count, setCount }}>
+//         <Count />
+//       </CountContext.Provider>
+//     </div>
+//   );
+// }
 
-function Count() {
-  return (
-    <div>
-      <CountRenderer />
-      <Buttons />
-    </div>
-  );
-}
+// function Count() {
+//   return (
+//     <div>
+//       <CountRenderer />
+//       <Buttons />
+//     </div>
+//   );
+// }
 
-function CountRenderer() {
-  const { count } = useContext(CountContext);
-  return <div>{count}</div>;
-}
+// function CountRenderer() {
+//   const { count } = useContext(CountContext);
+//   return <div>{count}</div>;
+// }
 
-function Buttons() {
-  const { count, setCount } = useContext(CountContext);
-  return (
-    <div>
-      <button
-        onClick={() => {
-          setCount(count + 1);
-        }}
-      >
-        increment
-      </button>
-      <button
-        onClick={() => {
-          setCount(count - 1);
-        }}
-      >
-        decrement
-      </button>
-    </div>
-  );
-}
+// function Buttons() {
+//   const { count, setCount } = useContext(CountContext);
+//   return (
+//     <div>
+//       <button
+//         onClick={() => {
+//           setCount(count + 1);
+//         }}
+//       >
+//         increment
+//       </button>
+//       <button
+//         onClick={() => {
+//           setCount(count - 1);
+//         }}
+//       >
+//         decrement
+//       </button>
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;
 
 // changes for wsl workspace
+
+// code for recoil(changes in context code).
