@@ -145,7 +145,7 @@ function App() {
   );
 }
 
-function Count() {
+function Count({ setCount }) {
   return (
     <div>
       <CountRenderer />
