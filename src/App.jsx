@@ -125,4 +125,59 @@
 
 // changes for wsl workspace
 
+//
+//
 // code for recoil(changes in context code).
+
+import { useContext, useState } from "react";
+import "./App.css";
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <CountContext.Provider value={{ count }}>
+        <Count setCount={setCount} />
+      </CountContext.Provider>
+    </div>
+  );
+}
+
+function Count() {
+  return (
+    <div>
+      <CountRenderer />
+      <Buttons setCount={setCount} />
+    </div>
+  );
+}
+
+function CountRenderer() {
+  const { count } = useContext(CountContext);
+  return <div>{count}</div>;
+}
+
+function Buttons({ setCount }) {
+  const { count } = useContext(CountContext);
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setCount(count + 1);
+        }}
+      >
+        increment
+      </button>
+      <button
+        onClick={() => {
+          setCount(count - 1);
+        }}
+      >
+        decrement
+      </button>
+    </div>
+  );
+}
+
+export default App;
