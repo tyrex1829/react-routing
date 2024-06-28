@@ -67,7 +67,7 @@
 //   );
 // }
 
-// code for prop-drilling.
+// code for prop-drilling & context api
 
 import { useContext, useState } from "react";
 import "./App.css";
