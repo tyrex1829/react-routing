@@ -131,6 +131,7 @@
 
 import { useContext, useState } from "react";
 import "./App.css";
+import { CountContext } from "./Context";
 
 function App() {
   const [count, setCount] = useState(0);
