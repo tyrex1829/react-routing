@@ -153,6 +153,7 @@ function Count() {
     <div>
       <CountRenderer />
       <Buttons />
+      <EvenCountRenderer />
     </div>
   );
 }
@@ -161,6 +162,12 @@ function CountRenderer() {
   const count = useRecoilValue(countAtom);
 
   return <div>{count}</div>;
+}
+
+function EvenCountRenderer() {
+  const count = useRecoilValue(countAtom);
+
+  return <div>{count % 2 === 0 && <p>It's even</p>}</div>;
 }
 
 function Buttons() {
