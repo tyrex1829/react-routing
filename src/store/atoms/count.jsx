@@ -7,7 +7,7 @@ export const countAtom = atom({
 
 // selector
 export const evenSelector = selector({
-  key: evenSelector,
+  key: "evenSelector",
   get: ({ get }) => {
     const count = get(countAtom);
     return count % 2;
